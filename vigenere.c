@@ -27,14 +27,14 @@ int main () {
 	int keySize = 0;
 	printf("\nEnter your key : ");
 	scanf("%s", key);
-	for (int i; key[i] != 0; i++) {
+	for (int i = 0; key[i] != 0; i++) {
 		keySize++;
 	}
 	// Message encryption
 	int delta = 0;
 	int deltaIndex = 0;
 	char result[100];
-	for (int i; message[i] != 0; i++) {
+	for (int i = 0; message[i] != 0; i++) {
 		if (deltaIndex > keySize) {
 			deltaIndex = 0;
 		}
@@ -42,6 +42,6 @@ int main () {
 		result[i] = letter(delta % 25);
 		deltaIndex++;
 	}
-	printf("This is the crypted message : %s", result);
+	printf("\nThis is the crypted message : %s", result);
 }
 // MAIN FUNCTION

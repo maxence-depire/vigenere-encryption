@@ -1,19 +1,22 @@
 #include <stdio.h>
 
+// ALPHABET PART
+char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
+// Get letter and return id.
 int code(char c) {
-	char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 	int i = 0;
 	while (c != alphabet[i]) {
 		i++;
 	}
 	return i;
 }
-
+// Get letter's id and return letter.
 char letter(int c) {
-	char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 	return alphabet[c];
 }
+// ALPHABET PART
 
+// MAIN FUNCTION
 int main () {
 	// Message input.
 	char message[100];
@@ -22,9 +25,8 @@ int main () {
 	// Key input.
 	char key[100];
 	int keySize = 0;
-	printf("\nEntrez votre clé : ");
+	printf("\nEnter your key : ");
 	scanf("%s", key);
-		// Count character in Key
 	for (int i; key[i] != 0; i++) {
 		keySize++;
 	}
@@ -40,5 +42,6 @@ int main () {
 		result[i] = letter(delta % 25);
 		deltaIndex++;
 	}
-	printf("Voici le message codé : %s", result);
+	printf("This is the crypted message : %s", result);
 }
+// MAIN FUNCTION

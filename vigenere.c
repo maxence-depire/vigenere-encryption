@@ -105,9 +105,6 @@ int main () {
 		else if ( choice == 2 ) {
 			uncrypt();
 		}
-		else if ( choice == 3 ) {
-			STOP = 1;
-		}
 		else {
 			STOP = 1;
 		}

@@ -1,61 +1,68 @@
-# Vigenere Encryption
-Repo create the 📆 14/11/2023 at ⌚️ 4:34pm in 🗺 Rodez, France.
-<br>By maxence-depire 👨‍💻.
+# Vigenere Cipher Implementation in C
 
-## Overview
-
-This C program implements a basic encryption technique known as a Vigenere encryption. The program takes a user-entered message and key, encrypts the message using the key, and outputs the encrypted result.
+This is a simple implementation of the Vigenere cipher in C. The Vigenere cipher is a method of encrypting alphabetic text by using a simple form of polyalphabetic substitution. The program provides options to encrypt and decrypt messages using the Vigenere cipher.
 
 ## Usage
 
-### Compilation
+1. **Compile the Code:**
+   ```bash
+   gcc vigenere.c -o vigenere
+   ```
 
-To compile the program, use a C compiler such as `gcc`:
+2. **Run the Program:**
+   ```bash
+   ./vigenere
+   ```
 
-```bash
-gcc vigenere.c -o vigenere
-```
+## Features
 
-### Execution
+### Alphabet Module
 
-Run the compiled executable:
+The code includes a module for handling the alphabet:
 
-```bash
-./vigenere
-```
+- `code`: Given a letter, it returns its corresponding index in the alphabet.
+- `letter`: Given an index, it returns the letter in the alphabet.
 
-## Code Structure
+### Encryption Function
 
-### ALPHABET PART
+The `crypt` function encrypts a user-provided message using the Vigenere cipher:
 
-- `alphabet`: An array containing the English alphabet, used for mapping characters to their corresponding indices.
-- `code(char c)`: Function to get the index of a letter in the alphabet.
-- `letter(int c)`: Function to get the letter corresponding to a given index.
+1. Takes user input for the message and key.
+2. Encrypts the message based on the Vigenere cipher algorithm.
+3. Prints the encrypted message.
 
-### MAIN FUNCTION
+### Decryption Function
 
-- Takes user input for the message and key.
-- Encrypts the message using a substitution cipher based on the provided key.
-- Outputs the encrypted message.
+The `uncrypt` function decrypts a user-provided message using the Vigenere cipher:
 
-## Input
+1. Takes user input for the message and key.
+2. Decrypts the message based on the Vigenere cipher algorithm.
+3. Prints the decrypted message.
 
-- The user is prompted to enter a message.
-- The user is prompted to enter a key for encryption.
+### Main Function
 
-## Output
+The `main` function acts as the entry point of the program:
 
-- The program outputs the encrypted message based on the provided key.
+1. Presents a menu for the user to choose between encryption, decryption, or quitting.
+2. Calls the corresponding function based on the user's choice.
+3. The program continues to run until the user chooses to quit.
 
 ## Example
 
-```
-Enter your message: hello
-Enter your key: secret
-This is the encrypted message: vrooa
+```plaintext
+VIGENERE CRYPT
+1 - CRYPT
+2 - UNCRYPT
+3 - QUIT
+1
+Enter your message : hello
+Enter your key : key
+This is the crypted message : rikvs
 ```
 
-## Note
+## Notes
 
-- The program assumes a fixed alphabet size of 26.
-- The encryption process uses a simple substitution cipher, and modifications may be needed for more complex scenarios.
+- The program assumes that the input message and key are alphanumeric and do not contain special characters or spaces.
+- The key is repeated cyclically to match the length of the message.
+
+Feel free to modify and enhance the code based on your specific requirements or use it as a starting point for more advanced cryptographic implementations.
